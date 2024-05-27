@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS -->
+  <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo_site.png">
+  
+  <!-- Title with a pun on the name Tomás and the word "atom" -->
+  <title>Life of aTom</title>
+  
+  <!-- Custom CSS -->
+  <link href="css_files/estilo_1.css" rel="stylesheet">
+
+  <!-- Bootstrap JavaScript -->
+  <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+ 
+  <div class="p-5 bg-secondary text-white" id="header">
+
+    <h1 id="titulo_site" class="text-center">Life of aTom</h1>
+    <p class="text-center">A personal blog of a <b>STEM</b> student</p>
+
+      <!-- Login Button -->
+    <div id="botaoDelogin">
+      <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#myModal">
+        <h4>Login</h4>
+      </button>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h2 id="header_do_login" class="modal-title"> Login :D </h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal Body -->
+          <div class="modal-body">
+            <form action="/action_page.php" class="text-start">
+              <div class="mb-3 mt-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+              </div>
+              <div class="mb-3">
+                <label for="pwd" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+              </div>
+              <div class="form-check mb-3">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button type="button" onclick="fazerLogin()" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="Home.html"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+      </svg>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h3>Menu</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="About_me.html">About me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Reviews.html">Recent Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Contact.html">Contact Me</a>
+          </li>
+          </ul>
+        </div>
+        <div class="offcanvas-footer">
+          <a href="Home.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="images/logo_site.png" alt="logo do site" height="100" width="100">
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+<section class="one" >
+  
+  <div class="container mt-5">
+    <div class="row"> 
+      
+      <div id="video_box" class="p-4 p-md-5 mb-4 text-white rounded bg-dark position-relative">
+        <video autoplay loop muted playsinline class="background-clip rounded">
+          <source src="videos/854259-hd_1280_720_48fps.mp4" type="video/mp4">
+        </video>
+      
+        <div class="col-md-6 px-0 position-relative z-index-1">
+          <h1 class="display-4 fst-italic"> <b>Space News</b></h1>
+          <p class="lead my-3">Here are the latest space <br> related news I read.</p>
+          <p class="lead mb-0"><a href="#The_posts" class="text-white fw-bold">Go to news</a></p>
+        </div>
+      </div>
+      
+      <div class="col-sm-12 bg-body-tertiary rounded">
+        <br>
+        <h2 class="text fst-italic">Hello World</h2>
+        <br>
+        <h5>A Little Introduction</h5>
+        <p>
+         
+          Step into the virtual universe where curiosity meets creativity, and technology dances with imagination. 
+          Buckle up for a wild ride through the mind of Tomás, where every click unveils a new adventure, and every scroll reveals a treasure trove of quirky insights and delightful discoveries. 
+          Get ready to embark on a journey unlike any other, where laughter, learning, and a touch of the unexpected await around every digital corner. 
+          So, grab your favorite beverage, settle into your comfiest chair, and prepare to be enchanted by the wonders that await you in the extraordinary realm of "Life of aTom"!</p>
+      </div>
+
+      <div class="col-sm-1"> </div>
+
+    </div>
+
+    <br>
+
+    <div class="row mb-2">
+      
+      <div class="col-md-6">
+        <div id="post_it_0" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Favorite Podcast</strong>
+            <h3 class="mb-0">StarTalk</h3>
+            <div class="mb-1 text-muted">May 6</div>
+            <p class="card-text mb-auto">StarTalk is a podcast on science hosted by astrophysicist Neil deGrasse Tyson</p>
+            <a href="https://www.youtube.com/@StarTalk" target="_blank" class="stretched-link">Continue reading</a>
+          </div>
+          
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thumbnail Image" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Thumbnail Image</title>
+              <image href="images/startalk.jpg" width="200" height="250" preserveAspectRatio="xMidYMid slice"></image>
+            </svg>
+          </div>
+        
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div id="post_it_1" class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Recent Hobbie</strong>
+            <h3 class="mb-0">Gaming</h3>
+            <div class="mb-1 text-muted">May 23</div>
+            <p class="mb-auto">Lately I've been enjoying the Soulsborne collection of games created by none other than FromSoftware</p>
+            <a href="https://www.fromsoftware.jp/ww/" class="stretched-link" target="_blank">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Soulsborne</title>
+              <image href="images/EldenRing.jpg" width="200" height="250" preserveAspectRatio="xMidYMid slice"></image>
+            
+            </svg>
+  
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="two">
+  <div class="container">
+  <div class="row g-5">
+    <div class="col-md-8">
+      
+      <h3 id="The_posts" class="pb-4 mb-4 fst-italic border-bottom">
+        My weekly blog posts
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">Shed some light in the Dark</h2>
+        <p class="blog-post-meta">May 24, 2024 by <a href="About_me.html">Tomás</a></p>
+
+        <p>In a recent scientific breakthrough, researchers have unveiled compelling evidence of a new type of particle, 
+          the "shadowon," which promises to shed light on the elusive nature of dark matter. 
+          Dark matter, comprising approximately 27% of the universe's mass-energy content, 
+          has long remained a puzzle, defying detection and comprehension. 
+          This discovery challenges conventional paradigms and offers an innovative explanation 
+          for dark matter's mysterious properties.</p>
+        <p>In summary, the discovery of the shadowon represents a significant milestone in astrophysics, reshaping our understanding 
+          of the universe's fundamental constituents. With each breakthrough, we inch closer to unraveling the mysteries of dark matter,
+          embarking on a voyage of discovery that transcends the boundaries of space and time.</p>
+          <hr>
+        <h2>Story of the week</h2>
+        <blockquote class="blockquote">
+          <p>Baking and ... a cat? </p>
+        </blockquote>
+        <p>Yesterday, my attempt to bake chocolate chip cookies turned into a comedic adventure filled with flour, 
+          a mischievous cat named Whiskers, and a surprise power outage. Despite the chaos, I persevered, 
+          improvising with a barbecue grill to finish baking the cookies under the stars. 
+          The result? Charred edges, but a batch of cookies infused with laughter and resilience.</p>
+        </article>
+          <hr>
+      <article class="blog-post">
+        <h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
+        <p class="blog-post-meta">December 27, 2024 by <a href="About_me.html">Tomás</a></p>
+
+        <p>Video banner</p>
+        <ul>
+          <li>The video related to the weekly post</li>
+        </ul>
+        <p>Now, you can watch the video related to the weekly post at the top of the page. 
+          This new feature aims to enhance your reading experience, providing a visual accompaniment to the written content. 
+          So, sit back, relax, and enjoy the show as you explore the latest news and stories in the extraordinary realm of "Life of aTom"!</p>
+      </article>
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">Contacts</h4>
+          <p class="mb-0">
+            <a href="Contact.html">Contact us</a>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">I've been surfing here</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.youtube.com/">
+                <img src="images/Yt_logo1.png" width="100" height="96" alt="Youtube">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Youtube</h6>
+                  <small class="text-body-secondary">May 15, 2024</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://getbootstrap.com/">
+                <img src="images/bootstrap-logo-shadow.png" width="100" height="96" alt="This is another blog post title">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">Bootstrap</h6>
+                  <small class="text-body-secondary">May 14, 2024</small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.w3schools.com/">
+                <img src="images/images (1).png" width="100" height="96" alt="W3Schools">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">W3schools</h6>
+                  <small class="text-body-secondary">May 13, 2024</small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li><a href="#">May 2024</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container mt-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-body-primary">&copy; 2024 aTom</p>
+        <a href="#titulo_site" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="images/logo_site.png" alt="logo do site" height="100" width="100">
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="Home.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="About_me.html" class="nav-link px-2 text-body-primary">About Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Função de login em js -->
+  <script>
+    function fazerLogin() {
+      var email = document.getElementById("email").value;
+      var pswd = document.getElementById("pwd").value;
+
+      if (email === "" || pswd === "") {
+        alert("Error: Invalid Login! Try again");
+      } else {
+        alert("Nice! You are logged in!");
+      }
+    }
+  </script>
+</body>
+
+
+</html>
